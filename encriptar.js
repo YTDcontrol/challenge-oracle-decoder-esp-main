@@ -11,7 +11,7 @@
 
 var caracterPulsado = document.querySelector("#input-texto");
 var caracterErrado = document.querySelector("#error-caracter");
-var caracteresAdmitidos = "qwertyuiopasd fghjklñzxcvbnm";
+var caracteresAdmitidos = "qwertyuiopasd fghjklñzxcvbnm,;.:!";
 var botonEncriptar = document.querySelector("#btn-encriptar");
 
 caracterPulsado.addEventListener("input", function(){
