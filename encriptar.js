@@ -1,14 +1,5 @@
 "use strict";
 
-// var botonEncriptar = document.querySelector("#btn-encriptar");
-
-// botonEncriptar.addEventListener("click", myFunction);
-
-// function myFunction(event) {
-//   event.preventDefault();
-//   console.log("listo");
-// }
-
 var caracterPulsado = document.querySelector("#input-texto");
 var mensajeEncriptado = document.querySelector("#msg");
 var caracterErrado = document.querySelector("#error-caracter");

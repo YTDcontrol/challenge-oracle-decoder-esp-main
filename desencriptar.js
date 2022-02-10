@@ -18,17 +18,19 @@ botonCopiar.addEventListener("click", function (event) {
 botonDesencriptar.addEventListener("click", function (event) {
     event.preventDefault();
 
-    var textoDesEncriptado = [];
+    var keyWords = ["ai", "enter", "imes", "ober", "ufat"];
+    var replaceChar = ["a", "e", "i", "o", "u"];
     var textoIngresado = caracterPulsado.value;
 
-    //console.log(textoIngresado);
-    var posicion = textoIngresado.indexOf("ai");
-    while (posicion >= 0) {
+    for (var x=0; x<5; x++){
+      var posicion = textoIngresado.indexOf(keyWords[x]);
+      while (posicion >= 0) {
         textoIngresado =
           textoIngresado.slice(0, posicion) +
-          "a" +
-          textoIngresado.slice(posicion + 2);
-        posicion = textoIngresado.indexOf("ai");
+          replaceChar[x] +
+          textoIngresado.slice(posicion + keyWords[x].length);
+        posicion = textoIngresado.indexOf(keyWords[x]);
+      }
     }
-    console.log(textoIngresado);
+    mensajeEncriptado.value = textoIngresado;
 });
