@@ -8,16 +8,24 @@ var caracteresAdmitidos = "qwertyuiopasd fghjklñzxcvbnm,;.:!";
 
 caracterPulsado.addEventListener("input", function(){
     var entrada = this.value;
-    var caracter = entrada.substr(-1); 
-    if (caracteresAdmitidos.includes(caracter)) {
-        document.getElementById("btn-encriptar").disabled = false;
-        caracterErrado.classList.add("invisible");
+    if (cadenaValida(entrada)) {
+      document.getElementById("btn-encriptar").disabled = false;
+      caracterErrado.classList.add("invisible");
     } else {
-        document.getElementById("btn-encriptar").disabled = true;
-        alert('"'+ caracter + '"' + " es un caracter inválido");
-        caracterErrado.classList.remove("invisible");
+      document.getElementById("btn-encriptar").disabled = true;
+      caracterErrado.classList.remove("invisible");
     }
 });
+
+function cadenaValida(inputString){
+  var validString = true;
+  for(var x=0; x<inputString.length; x++){
+      if (!caracteresAdmitidos.includes(inputString[x])) {
+        validString = false;
+      }
+    }
+  return validString;
+  }
 
 botonEncriptar.addEventListener("click", function(event){
     event.preventDefault();
