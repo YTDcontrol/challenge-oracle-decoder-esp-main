@@ -4,15 +4,18 @@ var caracterPulsado = document.querySelector("#input-texto");
 var mensajeEncriptado = document.querySelector("#msg");
 var caracterErrado = document.querySelector("#error-caracter");
 var botonEncriptar = document.querySelector("#btn-encriptar");
+var botones = document.querySelector(".btn");
 var caracteresAdmitidos = "qwertyuiopasd fghjklñzxcvbnm,;.:!";
 
 caracterPulsado.addEventListener("input", function(){
     var entrada = this.value;
     if (cadenaValida(entrada)) {
-      document.getElementById("btn-encriptar").disabled = false;
+      botonEncriptar.disabled = false;
+      botonDesencriptar.disabled = false;
       caracterErrado.classList.add("invisible");
     } else {
-      document.getElementById("btn-encriptar").disabled = true;
+      botonEncriptar.disabled = true;
+      botonDesencriptar.disabled = true;
       caracterErrado.classList.remove("invisible");
     }
 });
